@@ -1,0 +1,56 @@
+{
+  "providers": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-teamtoo-dev-182303-authRole",
+      "UnauthRoleArn": "arn:aws:iam::659023088945:role/amplify-teamtoo-dev-182303-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::659023088945:role/amplify-teamtoo-dev-182303-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-teamtoo-dev-182303-deployment",
+      "UnauthRoleName": "amplify-teamtoo-dev-182303-unauthRole",
+      "StackName": "amplify-teamtoo-dev-182303",
+      "StackId": "arn:aws:cloudformation:us-east-1:659023088945:stack/amplify-teamtoo-dev-182303/ee64d0b0-5645-11ed-8b14-12e72f8c322f",
+      "AmplifyAppId": "d1tsrlfvqzpxpy"
+    }
+  },
+  "auth": {
+    "teamtooff733583": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false,
+      "frontendAuthConfig": {
+        "socialProviders": [],
+        "usernameAttributes": [],
+        "signupAttributes": [
+          "EMAIL"
+        ],
+        "passwordProtectionSettings": {
+          "passwordPolicyMinLength": 8,
+          "passwordPolicyCharacters": []
+        },
+        "mfaConfiguration": "OFF",
+        "mfaTypes": [
+          "SMS"
+        ],
+        "verificationMechanisms": [
+          "EMAIL"
+        ]
+      },
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-teamtoo-dev-182303-deployment/amplify-cfn-templates/auth/teamtooff733583-cloudformation-template.json",
+        "logicalId": "authteamtooff733583"
+      },
+      "lastPushTimeStamp": "2022-10-27T22:30:11.268Z",
+      "output": {
+        "UserPoolId": "us-east-1_jwuFVXNjj",
+        "AppClientIDWeb": "34imcf6hd9th8df1jhptdosgbi",
+        "AppClientID": "49dcn7e7nb9hm11rqr4mckvgk1",
+        "IdentityPoolId": "us-east-1:bfe020c4-2898-47ba-b755-22c4798ebdf8",
+        "UserPoolArn": "arn:aws:cognito-idp:us-east-1:659023088945:userpool/us-east-1_jwuFVXNjj",
+        "IdentityPoolName": "teamtooff733583_identitypool_ff733583__dev",
+        "UserPoolName": "teamtooff733583_userpool_ff733583"
+      },
+      "lastPushDirHash": "faCUnIT/j3BIeelS3nkn/3IMILE="
+    }
+  }
+}

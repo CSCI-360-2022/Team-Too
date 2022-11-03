@@ -3,17 +3,18 @@ import React, { useState } from 'react';
 import './App.css';
 
 function Event(props){
-    const name = useState(0);
-    const date = useState(0);
-    const price =  useState(0);
-    const desc = useState(0);
-    const ticket = new Array[useState(0)];
+    const [name, setName] = useState('');
+    const [date, setDate] = useState('');
+    const [price, setPrice] =  useState(0);
+    const [desc, setDesc] = useState('');
+    const [ticket, setTicket] = useState({})
     
     return (
-        <div>Event
+        <div>
+            <div>Event</div>
             <form>
                 <label>name</label>
-                <input type="text" value={name} 
+                <input type="text" value={name} />
             </form>
         </div>
     )

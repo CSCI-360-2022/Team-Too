@@ -4,6 +4,9 @@ import Cart from './Cart'
 export default function PaymentConf() {
     const [totalPrice, setTotalPrice] = useState(0)
     
+    const completePurchase = () => {
+
+    }
 
     return (
     <div>

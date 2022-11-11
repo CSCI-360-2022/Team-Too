@@ -9,7 +9,17 @@ export default function Cart(props){
     const [totalPrice, setTotalPrice] = useState(0)
     const [aty, setAty] = useState(0)
 
+    const confirmation = () => {
 
+    }
+
+    const removeItem = () => {
+
+    }
+
+    const clearCart = () => {
+
+    }
 
     return (
         <div className="Cart">

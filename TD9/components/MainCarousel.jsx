@@ -1,12 +1,11 @@
 import Carousel from 'react-bootstrap/Carousel';
-import firstSlide from '../images/slide1.jpg';
-import secondSlide from '../images/slide2.jpg';
-import thirdSlide from '../images/slide3.jpg';
-import './styles.css';
+import firstSlide from '../images/firstSlide.svg';
+import secondSlide from '../images/secondSlide.svg';
+import thirdSlide from '../images/thirdSlide.svg';
 
 function DarkVariantExample() {
   return (
-    <Carousel className="carousel-container">
+    <Carousel>
       <Carousel.Item>
         <a href="/event">
           <img

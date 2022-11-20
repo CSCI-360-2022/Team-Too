@@ -42,34 +42,3 @@
   height: 35em;
   overflow-y: scroll;
 }
-
-.navbar {
-  background-color: #660000;
-}
-
-a.nav-link {
-  color: white;
-}
-
-button.btn.btn-primary {
-  background-color: #7B755A;
-  border: none;
-}
-
-.body {
-  background-color: #F8F8F5;
-}
-
-div.carousel-caption {
-  color: #F8F8F5;
-  background: #660000;
-}
-
-img.d-block.w-100 {
-  height: auto;
-  width: auto;
-}
-
-span.bg-info {
-  background-color: #A00000 !important;
-}

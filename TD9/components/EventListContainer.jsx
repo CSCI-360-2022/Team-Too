@@ -19,217 +19,217 @@ function EventListContainer() {
             <td>Nine Inch Nails</td>
             <td>December 21st</td>
             <td><Badge bg="info">Rock</Badge></td>
-            <td><Button color="#7B755A">Buy Ticket</Button></td>
+            <td><Button >Buy Ticket</Button></td>
           </tr>
           <tr>
             <td>Nine Inch Nails</td>
             <td>December 21st</td>
             <td><Badge bg="info">Rock</Badge></td>
-            <td><Button color="#7B755A">Buy Ticket</Button></td>
+            <td><Button >Buy Ticket</Button></td>
           </tr>
           <tr>
             <td>Nine Inch Nails</td>
             <td>December 21st</td>
             <td><Badge bg="info">Rock</Badge></td>
-            <td><Button color="#7B755A">Buy Ticket</Button></td>
+            <td><Button >Buy Ticket</Button></td>
           </tr>
           <tr>
             <td>Nine Inch Nails</td>
             <td>December 21st</td>
             <td><Badge bg="info">Rock</Badge></td>
-            <td><Button color="#7B755A">Buy Ticket</Button></td>
+            <td><Button >Buy Ticket</Button></td>
           </tr>
           <tr>
             <td>Nine Inch Nails</td>
             <td>December 21st</td>
             <td><Badge bg="info">Rock</Badge></td>
-            <td><Button color="#7B755A">Buy Ticket</Button></td>
+            <td><Button >Buy Ticket</Button></td>
           </tr>
           <tr>
             <td>Nine Inch Nails</td>
             <td>December 21st</td>
             <td><Badge bg="info">Rock</Badge></td>
-            <td><Button color="#7B755A">Buy Ticket</Button></td>
+            <td><Button >Buy Ticket</Button></td>
           </tr>
           <tr>
             <td>Nine Inch Nails</td>
             <td>December 21st</td>
             <td><Badge bg="info">Rock</Badge></td>
-            <td><Button color="#7B755A">Buy Ticket</Button></td>
+            <td><Button >Buy Ticket</Button></td>
           </tr>
           <tr>
             <td>Nine Inch Nails</td>
             <td>December 21st</td>
             <td><Badge bg="info">Rock</Badge></td>
-            <td><Button color="#7B755A">Buy Ticket</Button></td>
+            <td><Button >Buy Ticket</Button></td>
           </tr>
           <tr>
             <td>Nine Inch Nails</td>
             <td>December 21st</td>
             <td><Badge bg="info">Rock</Badge></td>
-            <td><Button color="#7B755A">Buy Ticket</Button></td>
+            <td><Button >Buy Ticket</Button></td>
           </tr>
           <tr>
             <td>Nine Inch Nails</td>
             <td>December 21st</td>
             <td><Badge bg="info">Rock</Badge></td>
-            <td><Button color="#7B755A">Buy Ticket</Button></td>
+            <td><Button >Buy Ticket</Button></td>
           </tr>
           <tr>
             <td>Nine Inch Nails</td>
             <td>December 21st</td>
             <td><Badge bg="info">Rock</Badge></td>
-            <td><Button color="#7B755A">Buy Ticket</Button></td>
+            <td><Button >Buy Ticket</Button></td>
           </tr>
           <tr>
             <td>Nine Inch Nails</td>
             <td>December 21st</td>
             <td><Badge bg="info">Rock</Badge></td>
-            <td><Button color="#7B755A">Buy Ticket</Button></td>
+            <td><Button >Buy Ticket</Button></td>
           </tr>
           <tr>
             <td>Nine Inch Nails</td>
             <td>December 21st</td>
             <td><Badge bg="info">Rock</Badge></td>
-            <td><Button color="#7B755A">Buy Ticket</Button></td>
+            <td><Button >Buy Ticket</Button></td>
           </tr>
           <tr>
             <td>Nine Inch Nails</td>
             <td>December 21st</td>
             <td><Badge bg="info">Rock</Badge></td>
-            <td><Button color="#7B755A">Buy Ticket</Button></td>
+            <td><Button >Buy Ticket</Button></td>
           </tr>
           <tr>
             <td>Nine Inch Nails</td>
             <td>December 21st</td>
             <td><Badge bg="info">Rock</Badge></td>
-            <td><Button color="#7B755A">Buy Ticket</Button></td>
+            <td><Button >Buy Ticket</Button></td>
           </tr>
           <tr>
             <td>Nine Inch Nails</td>
             <td>December 21st</td>
             <td><Badge bg="info">Rock</Badge></td>
-            <td><Button color="#7B755A">Buy Ticket</Button></td>
+            <td><Button >Buy Ticket</Button></td>
           </tr>
           <tr>
             <td>Nine Inch Nails</td>
             <td>December 21st</td>
             <td><Badge bg="info">Rock</Badge></td>
-            <td><Button color="#7B755A">Buy Ticket</Button></td>
+            <td><Button >Buy Ticket</Button></td>
           </tr>
           <tr>
             <td>Nine Inch Nails</td>
             <td>December 21st</td>
             <td><Badge bg="info">Rock</Badge></td>
-            <td><Button color="#7B755A">Buy Ticket</Button></td>
+            <td><Button >Buy Ticket</Button></td>
           </tr>
           <tr>
             <td>Nine Inch Nails</td>
             <td>December 21st</td>
             <td><Badge bg="info">Rock</Badge></td>
-            <td><Button color="#7B755A">Buy Ticket</Button></td>
+            <td><Button >Buy Ticket</Button></td>
           </tr>
           <tr>
             <td>Nine Inch Nails</td>
             <td>December 21st</td>
             <td><Badge bg="info">Rock</Badge></td>
-            <td><Button color="#7B755A">Buy Ticket</Button></td>
+            <td><Button >Buy Ticket</Button></td>
           </tr>
           <tr>
             <td>Nine Inch Nails</td>
             <td>December 21st</td>
             <td><Badge bg="info">Rock</Badge></td>
-            <td><Button color="#7B755A">Buy Ticket</Button></td>
+            <td><Button >Buy Ticket</Button></td>
           </tr>
           <tr>
             <td>Nine Inch Nails</td>
             <td>December 21st</td>
             <td><Badge bg="info">Rock</Badge></td>
-            <td><Button color="#7B755A">Buy Ticket</Button></td>
+            <td><Button >Buy Ticket</Button></td>
           </tr>
           <tr>
             <td>Nine Inch Nails</td>
             <td>December 21st</td>
             <td><Badge bg="info">Rock</Badge></td>
-            <td><Button color="#7B755A">Buy Ticket</Button></td>
+            <td><Button >Buy Ticket</Button></td>
           </tr>
           <tr>
             <td>Nine Inch Nails</td>
             <td>December 21st</td>
             <td><Badge bg="info">Rock</Badge></td>
-            <td><Button color="#7B755A">Buy Ticket</Button></td>
+            <td><Button >Buy Ticket</Button></td>
           </tr>
           <tr>
             <td>Nine Inch Nails</td>
             <td>December 21st</td>
             <td><Badge bg="info">Rock</Badge></td>
-            <td><Button color="#7B755A">Buy Ticket</Button></td>
+            <td><Button >Buy Ticket</Button></td>
           </tr>
           <tr>
             <td>Nine Inch Nails</td>
             <td>December 21st</td>
             <td><Badge bg="info">Rock</Badge></td>
-            <td><Button color="#7B755A">Buy Ticket</Button></td>
+            <td><Button >Buy Ticket</Button></td>
           </tr>
           <tr>
             <td>Nine Inch Nails</td>
             <td>December 21st</td>
             <td><Badge bg="info">Rock</Badge></td>
-            <td><Button color="#7B755A">Buy Ticket</Button></td>
+            <td><Button >Buy Ticket</Button></td>
           </tr>
           <tr>
             <td>Nine Inch Nails</td>
             <td>December 21st</td>
             <td><Badge bg="info">Rock</Badge></td>
-            <td><Button color="#7B755A">Buy Ticket</Button></td>
+            <td><Button >Buy Ticket</Button></td>
           </tr>
           <tr>
             <td>Nine Inch Nails</td>
             <td>December 21st</td>
             <td><Badge bg="info">Rock</Badge></td>
-            <td><Button color="#7B755A">Buy Ticket</Button></td>
+            <td><Button >Buy Ticket</Button></td>
           </tr>
           <tr>
             <td>Nine Inch Nails</td>
             <td>December 21st</td>
             <td><Badge bg="info">Rock</Badge></td>
-            <td><Button color="#7B755A">Buy Ticket</Button></td>
+            <td><Button >Buy Ticket</Button></td>
           </tr>
           <tr>
             <td>Nine Inch Nails</td>
             <td>December 21st</td>
             <td><Badge bg="info">Rock</Badge></td>
-            <td><Button color="#7B755A">Buy Ticket</Button></td>
+            <td><Button >Buy Ticket</Button></td>
           </tr>
           <tr>
             <td>Nine Inch Nails</td>
             <td>December 21st</td>
             <td><Badge bg="info">Rock</Badge></td>
-            <td><Button color="#7B755A">Buy Ticket</Button></td>
+            <td><Button >Buy Ticket</Button></td>
           </tr>
           <tr>
             <td>Nine Inch Nails</td>
             <td>December 21st</td>
             <td><Badge bg="info">Rock</Badge></td>
-            <td><Button color="#7B755A">Buy Ticket</Button></td>
+            <td><Button >Buy Ticket</Button></td>
           </tr>
           <tr>
             <td>Nine Inch Nails</td>
             <td>December 21st</td>
             <td><Badge bg="info">Rock</Badge></td>
-            <td><Button color="#7B755A">Buy Ticket</Button></td>
+            <td><Button >Buy Ticket</Button></td>
           </tr>
           <tr>
             <td>Nine Inch Nails</td>
             <td>December 21st</td>
             <td><Badge bg="info">Rock</Badge></td>
-            <td><Button color="#7B755A">Buy Ticket</Button></td>
+            <td><Button >Buy Ticket</Button></td>
           </tr>
           <tr>
             <td>Nine Inch Nails</td>
             <td>December 21st</td>
             <td><Badge bg="info">Rock</Badge></td>
-            <td><Button color="#7B755A">Buy Ticket</Button></td>
+            <td><Button >Buy Ticket</Button></td>
           </tr>
           
         </tbody>

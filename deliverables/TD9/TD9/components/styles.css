@@ -1,0 +1,44 @@
+.ticket-container {
+  box-shadow: 2px 4px 4px 4px rgb(0 0 0 / 0.1);
+  justify-content: center;
+  width: auto;
+  margin: 2em;
+}
+
+.info-col {
+  margin: 10px;
+  display: inline;
+}
+
+.info-row {
+  width: fit-content;
+  justify-content: center;
+}
+
+.info-result {
+  font-weight: bold;
+}
+
+.info-price {
+  justify-content: space-between
+}
+
+.cart-container {
+
+}
+
+.cart {
+  margin-top: 10%;
+}
+
+.cart-footer {
+  justify-content: center;
+  align-content: center;
+  height: 8em;
+  text-align: center;
+}
+
+.event-list-container {
+  height: 35em;
+  overflow-y: scroll;
+}

@@ -1,6 +1,6 @@
-exports.handler = async (event) => {
-    console.log(event)
-    const cofcEventID = event.pathParameters.eventID;
+exports.handler = async (e) => {
+    console.log(e)
+    const cofcEventID = e.pathParameters.eventID;
     const cofcEvent = {'eventID': cofcEventID, 'cofcEventName': "CofC Event " + cofcEventID };
     const response = {
         statusCode: 200,

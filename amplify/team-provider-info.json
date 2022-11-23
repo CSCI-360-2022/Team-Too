@@ -23,7 +23,11 @@
         },
         "cofcEventHandler": {
           "deploymentBucketName": "amplify-teamtoo-dev-182303-deployment",
-          "s3Key": "amplify-builds/cofcEventHandler-51455443417737547a56-build.zip"
+          "s3Key": "amplify-builds/cofcEventHandler-542b344954387942726e-build.zip"
+        },
+        "addEvent": {
+          "deploymentBucketName": "amplify-teamtoo-dev-182303-deployment",
+          "s3Key": "amplify-builds/addEvent-4b55577a766b53754178-build.zip"
         }
       }
     }

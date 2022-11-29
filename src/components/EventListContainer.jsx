@@ -6,20 +6,7 @@ import { eventData } from '../__mocks__/mockdata'
 import { useHistory } from 'react-router'
 import './styles.css'
 import "react-datepicker/dist/react-datepicker.css";
-//import {apiCalendar} from '../calender.js';
-//import {handleAuthClick,createEventFromNow,gapi} from 'react-google-calendar-api';
 import ApiCalendar from 'react-google-calendar-api';
-//import React, {ReactNode, SyntheticEvent} from 'react';
-
-
-
-
-
-
-// AIzaSyA-bvcu_3Gry9jj-MUb0EwQttFI-KKkVrQ
-
-// 304264845667-ov5f0950gg7tt9dj0k3vtcb3avpf4sa2.apps.googleusercontent.com
-// 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
 
 function EventListContainer(props) {
   const [eventList, setEventList] = useState(eventData.events)
@@ -37,15 +24,7 @@ function EventListContainer(props) {
       "https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest"
     ]
   }
-
-  const apiCalendar = new ApiCalendar(config);
-
-  // useEffect(() => {
-  //   const apiCalendar = new ApiCalendar(config);
-  // }, [])
-
-const apiCalendar = new ApiCalendar(config)
-console.log(apiCalendar)
+  const apiCalendar = new ApiCalendar(config)
 
   const { selectEvent } = props.eventFunctions
 

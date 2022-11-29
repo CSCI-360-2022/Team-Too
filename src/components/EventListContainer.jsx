@@ -1,13 +1,21 @@
 import React from 'react'
+import DatePicker from "react-datepicker";
 import { useState } from 'react'
 import { Badge, Button, Container, Table, Form, Row, Col } from 'react-bootstrap'
 import { eventData } from '../__mocks__/mockdata' 
+import { useHistory } from 'react-router'
 import './styles.css'
+import "react-datepicker/dist/react-datepicker.css";
 
-function EventListContainer() {
+function EventListContainer(props) {
   const [eventList, setEventList] = useState(eventData.events)
   const [filteredList, setFilteredList] = useState(eventData.events)
   const [filterBadges, setFilterBadges] = useState([])
+  const [startDate, setStartDate] = useState(new Date());
+  const [endDate, setEndDate] = useState(new Date());
+  const history = useHistory()
+
+  const { selectEvent } = props.eventFunctions
 
   const filterList = (filterValue) => {
     setFilteredList(eventList.filter(event => event.eventName.includes(filterValue)))
@@ -34,6 +42,10 @@ function EventListContainer() {
     setFilterBadges(remove)
   }
 
+  const eventPage = (e) => {
+    selectEvent(e)
+    history.push('/event')
+  }
 
 
   return (
@@ -49,6 +61,10 @@ function EventListContainer() {
               return(<><Button className="badge-btn" value={badgeName} onClick={(e) => removeBadge(e.target.innerHTML)}><Badge bg='info'>{badgeName}</Badge></Button>{' '}</>)
             })}
           </Col>
+        </Row>
+        <Row>
+          <DatePicker selected={startDate} onChange={(date) => setStartDate(date)} />
+          <DatePicker selected={endDate} onChange={(date) => setEndDate(date)} />
         </Row>
       </Form>
       <Table>
@@ -74,7 +90,7 @@ function EventListContainer() {
                       })
                     }
                   </td>
-                  <td><Button color="#7B755A">Buy Ticket</Button></td>
+                  <td><Button value={event.eventID} color="#7B755A" onClick={(e) => eventPage(e.target.value)} >Buy Ticket</Button></td>
                 </tr>
               )
             })

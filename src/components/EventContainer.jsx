@@ -4,12 +4,12 @@ import seating from '../images/Seating2.PNG'
 import Ticket from './Ticket'
 import './styles.css'
 
-function EventContainer() {
+function EventContainer(props) {
   return (
     <Container>
       <Row>
         <Container>
-          This is event information
+          {props.selectedEvent?.eventName}
         </Container>
       </Row>
       <Row>

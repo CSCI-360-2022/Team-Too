@@ -2,10 +2,10 @@ import React from 'react'
 import EventContainer from '../components/EventContainer'
 import '../components/styles.css'
 
-function Event() {
+function Event(props) {
   return (
     <div className="event">
-      <EventContainer />
+      <EventContainer selectedEvent={props.selectedEvent} />
     </div>
 
   )

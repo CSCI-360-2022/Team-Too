@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import {
   BrowserRouter as Router,
   Switch,
@@ -13,8 +13,21 @@ import { withAuthenticator } from "@aws-amplify/ui-react";
 import EventList from "./pages/EventList";
 import Cart from "./pages/Cart";
 import EventNavBar from "./components/EventNavBar";
+import { eventData } from './__mocks__/mockdata' 
 
 export default function App() {
+  const [selectedEvent, setSelectedEvent] = useState()
+  const [eventList, setEventList] = useState(eventData.events)
+
+  const eventFunctions = {
+    selectEvent: (cofcEvent) => {
+      const found = eventList.find(obj => {
+        return obj.eventID == cofcEvent;
+      });
+      setSelectedEvent(found)
+    }
+  }
+
   return (
     <Router>
       <EventNavBar />
@@ -26,10 +39,10 @@ export default function App() {
             <User />
           </Route>
           <Route path="/event">
-            <Event />
+            <Event selectedEvent={selectedEvent} />
           </Route>
           <Route path="/eventlist">
-            <EventList />
+            <EventList eventFunctions={eventFunctions} eventList={eventList} />
           </Route>
           <Route path="/cart">
             <Cart />

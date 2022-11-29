@@ -6,10 +6,10 @@ import '../components/styles.css'
 const myAPI = "apic5c75167"
 const path = '/customers';
 
-function EventList() {
+function EventList(props) {
   return (
     <div className="event-list">
-      <EventListContainer />
+      <EventListContainer eventFunctions={props.eventFunctions} />
     </div>
   )
 }

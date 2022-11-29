@@ -18,6 +18,8 @@ import { eventData } from './__mocks__/mockdata'
 export default function App() {
   const [selectedEvent, setSelectedEvent] = useState()
   const [eventList, setEventList] = useState(eventData.events)
+  const [cartList, setCartList] = useState([{}])
+  const [itemNumber, setItemNumber] = useState(0)
 
   const eventFunctions = {
     selectEvent: (cofcEvent) => {
@@ -28,9 +30,16 @@ export default function App() {
     }
   }
 
+  const cartFunctions = {
+    addToCart: (item) => {
+      setCartList([...cartList, item])
+      setItemNumber(cartList.length)
+    }
+  }
+
   return (
     <Router>
-      <EventNavBar />
+      <EventNavBar itemNumber={itemNumber} />
       <div>
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
@@ -39,13 +48,13 @@ export default function App() {
             <User />
           </Route>
           <Route path="/event">
-            <Event selectedEvent={selectedEvent} />
+            <Event selectedEvent={selectedEvent} cartFunctions={cartFunctions} />
           </Route>
           <Route path="/eventlist">
             <EventList eventFunctions={eventFunctions} eventList={eventList} />
           </Route>
           <Route path="/cart">
-            <Cart />
+            <Cart cartFunctions={cartFunctions} />
           </Route>
           <Route path="/">
             <Main />

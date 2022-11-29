@@ -1,11 +1,20 @@
 import React from 'react'
 import DatePicker from "react-datepicker";
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Badge, Button, Container, Table, Form, Row, Col } from 'react-bootstrap'
 import { eventData } from '../__mocks__/mockdata' 
 import { useHistory } from 'react-router'
 import './styles.css'
 import "react-datepicker/dist/react-datepicker.css";
+//import {apiCalendar} from '../calender.js';
+//import {handleAuthClick,createEventFromNow,gapi} from 'react-google-calendar-api';
+import ApiCalendar from 'react-google-calendar-api';
+//import React, {ReactNode, SyntheticEvent} from 'react';
+
+
+
+
+
 
 function EventListContainer(props) {
   const [eventList, setEventList] = useState(eventData.events)
@@ -14,11 +23,32 @@ function EventListContainer(props) {
   const [startDate, setStartDate] = useState(new Date());
   const [endDate, setEndDate] = useState(new Date());
   const history = useHistory()
+ 
+  const config = {
+    "clientId": "14231321492-kipqi5npab3hl2cq53djkuja885tj8ad.apps.googleusercontent.com",
+    "apiKey": "AIzaSyDSlgppEUwIRdek6wN5EwzicbvJjzOCDGo",
+    "scope": "https://www.googleapis.com/auth/calendar",
+    "discoveryDocs": [
+      "https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest"
+    ]
+  }
+
+  const apiCalendar = new ApiCalendar(config);
+
+  // useEffect(() => {
+  //   const apiCalendar = new ApiCalendar(config);
+  // }, [])
 
   const { selectEvent } = props.eventFunctions
 
   const filterList = (filterValue) => {
     setFilteredList(eventList.filter(event => event.eventName.includes(filterValue)))
+  }
+
+  const eventFromNow = {
+    time: 480,
+    summary: 'Event from now',
+    
   }
 
   const filterBadge = (e, filterBadge) => {
@@ -46,6 +76,24 @@ function EventListContainer(props) {
     selectEvent(e)
     history.push('/event')
   }
+
+  const testFunction = (e) => {
+    
+    console.log(eventFromNow)
+    console.log(apiCalendar)
+    apiCalendar.createEventFromNow(eventFromNow)
+    .then((result) => {
+      console.log(result);
+    })
+    .catch((error) => {
+      console.log('Error');
+      console.log(error);
+    });
+}
+    //console.log(e.target.value)
+    //apiCalendar.createEventFromNow(e)
+    
+  
 
 
   return (
@@ -90,7 +138,15 @@ function EventListContainer(props) {
                       })
                     }
                   </td>
+                  
                   <td><Button value={event.eventID} color="#7B755A" onClick={(e) => eventPage(e.target.value)} >Buy Ticket</Button></td>
+                  <td><Button onClick={()=>apiCalendar.handleAuthClick()}>Sign In</Button></td>
+                  
+                  <td><Button value={eventFromNow} onClick={(e) => testFunction(e)}>Calender</Button></td>
+                  <td><Button onClick={(apiCalendar.setCalendar)}>Make</Button></td>
+                  <td><Button onClick={(apiCalendar.listEvents)}>Look</Button></td>
+                  
+                  
                 </tr>
               )
             })

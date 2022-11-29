@@ -73,3 +73,8 @@ img.d-block.w-100 {
 span.bg-info {
   background-color: #A00000 !important;
 }
+
+.badge-btn {
+  padding: 0px !important;
+  background-color: #FFFFFF !important;
+}

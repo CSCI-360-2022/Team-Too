@@ -2,10 +2,10 @@ import React from 'react'
 import CartContainer from '../components/CartContainer'
 import '../components/styles.css'
 
-function Cart() {
+function Cart({itemNumber}) {
   return (
     <div className='cart'>
-      <CartContainer />
+      <CartContainer itemNumber={itemNumber}/>
     </div>
   )
 }

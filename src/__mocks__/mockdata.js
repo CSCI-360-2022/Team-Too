@@ -44,3 +44,11 @@ export const eventData = {
     {eventID: 42, eventName: 'Mens Basketball', eventDate: '1/19/2023', eventCategory: ['sport','basketball', 'mens']},
   ]
 }
+
+export const seatData = {
+  seats: [
+    {rowID: 1, rowName: 'A', price: 50.00},
+    {rowID: 2, rowName: 'B', price: 75.00},
+    {rowID: 3, rowName: 'C', price: 100.00},
+  ]
+}

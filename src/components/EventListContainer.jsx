@@ -7,6 +7,11 @@ import { useHistory } from 'react-router'
 import './styles.css'
 import "react-datepicker/dist/react-datepicker.css";
 
+// AIzaSyA-bvcu_3Gry9jj-MUb0EwQttFI-KKkVrQ
+
+// 304264845667-ov5f0950gg7tt9dj0k3vtcb3avpf4sa2.apps.googleusercontent.com
+// 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
+
 function EventListContainer(props) {
   const [eventList, setEventList] = useState(eventData.events)
   const [filteredList, setFilteredList] = useState(eventData.events)
@@ -14,6 +19,9 @@ function EventListContainer(props) {
   const [startDate, setStartDate] = useState(new Date());
   const [endDate, setEndDate] = useState(new Date());
   const history = useHistory()
+
+const apiCalendar = new ApiCalendar(config)
+console.log(apiCalendar)
 
   const { selectEvent } = props.eventFunctions
 
@@ -24,10 +32,19 @@ function EventListContainer(props) {
   const filterBadge = (e, filterBadge) => {
     console.log(e)
     if(e.keyCode==13){
-      console.log(...filterBadge)
       setFilterBadges([...filterBadges, filterBadge])
       e.target.value = ''
     } 
+  }
+
+  const startDatePicked = (date) => {
+    setStartDate(date)
+    setFilteredList(eventList.filter(event => new Date(event.eventDate) > date))
+  }
+
+  const endDatePicked = (date) => {
+    setEndDate(date)
+    setFilteredList(eventList.filter(event => new Date(event.eventDate) < date))
   }
 
   const createBadge = (badgeName) => {
@@ -63,8 +80,8 @@ function EventListContainer(props) {
           </Col>
         </Row>
         <Row>
-          <DatePicker selected={startDate} onChange={(date) => setStartDate(date)} />
-          <DatePicker selected={endDate} onChange={(date) => setEndDate(date)} />
+          <DatePicker selected={startDate} onChange={(date) => startDatePicked(date)} />
+          <DatePicker selected={endDate} onChange={(date) => endDatePicked(date)} />
         </Row>
       </Form>
       <Table>
@@ -79,6 +96,7 @@ function EventListContainer(props) {
         <tbody>
           {
             filteredList.map((event) => {
+              console.log(event)
               return (
                 <tr value={event.eventID}>
                   <td>{event.eventName}</td>

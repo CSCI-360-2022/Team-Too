@@ -6,6 +6,7 @@ import Ticket from './Ticket'
 import { seatData } from '../__mocks__/mockdata'
 import './styles.css'
 import { useState } from 'react'
+import { click } from '@testing-library/user-event/dist/click'
 
 function EventContainer({selectedEvent, cartFunctions}) {
   const [seatList, setSeatList] = useState(seatData.seats)
@@ -18,6 +19,15 @@ function EventContainer({selectedEvent, cartFunctions}) {
     addToCart(selectedSeat)
   }
 
+  const clickState = (e) => {
+    console.log(e)
+    var element = document.getElementById(e.target.id)
+   //var colorElement = element.style.backgroundColor
+    element.classList.toggle("selected")
+
+    
+  }
+  
   return (
     <Container>
       <Row>
@@ -30,10 +40,10 @@ function EventContainer({selectedEvent, cartFunctions}) {
       <svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 225.58 223.5">
         <defs>
         </defs>
-        <rect class="cls-1" x=".5" y=".5" width="103.97" height="103.97" fill={'#4ADEDE'} onClick={() => console.log('clicked')}/>
-        <rect class="cls-1" x="121.11" y=".5" width="103.97" height="103.97"/>
-        <rect class="cls-1" x=".5" y="119.03" width="103.97" height="103.97"/>
-        <rect class="cls-1" x="121.11" y="119.03" width="103.97" height="103.97"/>
+        <rect class="cls-1" id="seat1" x=".5" y=".5" width="103.97" height="103.97"  onClick={(e) => clickState(e)}/>
+        <rect class="cls-1" id="seat2"x="121.11" y=".5" width="103.97" height="103.97" onClick={(e) => clickState(e)}/>
+        <rect class="cls-1" id="seat3" x=".5" y="119.03" width="103.97" height="103.97" onClick={(e) => clickState(e)}/>
+        <rect class="cls-1" id="seat4" x="121.11" y="119.03" width="103.97" height="103.97" onClick={(e) => clickState(e)}/>
       </svg>
           {
             seatList.map((seat) => {

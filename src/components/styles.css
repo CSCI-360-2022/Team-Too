@@ -79,4 +79,12 @@ span.bg-info {
   background-color: #FFFFFF !important;
 }
 
-.cls-1{stroke:#000;stroke-miterlimit:10;}
+.cls-1{
+  stroke:#000;
+  stroke-miterlimit:10;
+  fill:white;
+}
+
+.selected{
+  fill:red;
+}

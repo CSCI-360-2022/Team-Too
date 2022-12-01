@@ -39,7 +39,6 @@ function EventListContainer(props) {
   }
 
   const filterBadge = (e, filterBadge) => {
-    console.log(e)
     if(e.keyCode==13){
       setFilterBadges([...filterBadges, filterBadge])
       e.target.value = ''
@@ -74,26 +73,19 @@ function EventListContainer(props) {
   }
 
   const testFunction = (e) => {
-    
-    console.log(eventFromNow)
-    console.log(apiCalendar)
     apiCalendar.createEventFromNow(eventFromNow)
     .then((result) => {
       console.log(result);
     })
     .catch((error) => {
-      console.log('Error');
       console.log(error);
     });
-}
-    //console.log(e.target.value)
-    //apiCalendar.createEventFromNow(e)
-    
+  }
   
 
 
   return (
-    <Container className="event-list-container">
+    <Container>
       <Form>
         <Row>
           <Col>
@@ -111,46 +103,50 @@ function EventListContainer(props) {
           <DatePicker selected={endDate} onChange={(date) => endDatePicked(date)} />
         </Row>
       </Form>
-      <Table>
+      <Container className="event-list-container">
+
+        <Table>
         <thead>
-          <tr>
-            <th>Event Name</th>
-            <th>Event Date</th>
-            <th>Event Category</th>
-            <th>Purchase</th>
-          </tr>
-        </thead>
-        <tbody>
-          {
-            filteredList.map((event) => {
-              console.log(event)
-              return (
-                <tr value={event.eventID}>
-                  <td>{event.eventName}</td>
-                  <td>{event.eventDate}</td>
-                  <td>
-                    {
-                      event.eventCategory.map((catName) => {
-                        return ( <><Badge bg="info">{catName}</Badge>{' '}</>)
-                      })
-                    }
-                  </td>
-                  
-                  <td><Button value={event.eventID} color="#7B755A" onClick={(e) => eventPage(e.target.value)} >Buy Ticket</Button></td>
-                  <td><Button onClick={()=>apiCalendar.handleAuthClick()}>Sign In</Button></td>
-                  
-                  <td><Button value={eventFromNow} onClick={(e) => testFunction(e)}>Calender</Button></td>
-                  <td><Button onClick={(apiCalendar.setCalendar)}>Make</Button></td>
-                  <td><Button onClick={(apiCalendar.listEvents)}>Look</Button></td>
-                  
-                  
-                </tr>
-              )
-            })
-          }
-          
-        </tbody>
-      </Table>
+            <tr key={'header'}>
+              <th>Event Name</th>
+              <th>Event Date</th>
+              <th>Event Category</th>
+              <th>Purchase</th>
+            </tr>
+          </thead>
+          <tbody>
+            {
+              filteredList.map((event) => {
+                return (
+                  <tr key={event.eventID} value={event.eventID}>
+                    <td>{event.eventName}</td>
+                    <td>{event.eventDate}</td>
+                    <td>
+                      <div className={'category-div'}>
+                        {
+                          event.eventCategory.map((catName, i) => {
+                            return ( <Badge key={i} className={`badge badge-${i}`} bg="info">{catName}</Badge>)
+                          })
+                        }                   
+                      </div>
+                    </td>
+                    
+                    <td><Button value={event.eventID} color="#7B755A" onClick={(e) => eventPage(e.target.value)} >Buy Ticket</Button></td>
+                    <td><Button onClick={()=>apiCalendar.handleAuthClick()}>Sign In</Button></td>
+                    
+                    <td><Button value={eventFromNow} onClick={(e) => testFunction(e)}>Calender</Button></td>
+                    <td><Button onClick={(apiCalendar.setCalendar)}>Make</Button></td>
+                    <td><Button onClick={(apiCalendar.listEvents)}>Look</Button></td>
+                    
+                    
+                  </tr>
+                )
+              })
+            }
+            
+          </tbody>
+        </Table>
+      </Container>
     </Container>
   )
 }

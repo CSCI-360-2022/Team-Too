@@ -2,25 +2,18 @@ import React, { useState } from 'react'
 import { Container, Row, Col } from 'react-bootstrap'
 import './styles.css'
 
-function Ticket(props) {
+function Ticket({seatID, seatPrice}) {
 
   return (
     <Container className='ticket-container'>
-      <Row className='ticket-row'>
-        <Col className='info-col'>
-          <Row className='info-row'>Section</Row>
-          <Row className='info-row info-result'>B</Row>
-        </Col>
-        <Col className='info-col'>
-          <Row className='info-row'>Row</Row>
-          <Row className='info-row info-result'>3</Row>
-        </Col>
+      <Row className='ticket-row' key={seatID}>
         <Col className='info-col'>
           <Row className='info-row'>Seat</Row>
-          <Row className='info-row info-result'>11</Row>
+          <Row className='info-row info-result'>{seatID.toUpperCase()}</Row>
         </Col>
         <Col className='info-col info-price'>
-          $100.00
+          <Row className='info-price'>Seat Price</Row>
+          <Row className='info-price info-result'>${seatPrice}</Row>
         </Col>
       </Row>
     </Container>

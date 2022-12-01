@@ -13,10 +13,12 @@ import { withAuthenticator } from "@aws-amplify/ui-react";
 import EventList from "./pages/EventList";
 import Cart from "./pages/Cart";
 import EventNavBar from "./components/EventNavBar";
-import { eventData } from './__mocks__/mockdata' 
+import { eventData, purchasedSeatData } from './__mocks__/mockdata' 
+import Footer from "./components/Footer";
 
 export default function App() {
   const [selectedEvent, setSelectedEvent] = useState()
+  const [purchasedSeats, setPurchasedSeats] = useState()
   const [eventList, setEventList] = useState(eventData.events)
   const [cartList, setCartList] = useState([{}])
   const [itemNumber, setItemNumber] = useState(0)
@@ -27,6 +29,8 @@ export default function App() {
         return obj.eventID == cofcEvent;
       });
       setSelectedEvent(found)
+      var thisList = purchasedSeatData.purchasedSeats.filter(pSeat => pSeat.eventID == cofcEvent )
+      setPurchasedSeats(thisList)
     }
   }
 
@@ -48,7 +52,7 @@ export default function App() {
             <User />
           </Route>
           <Route path="/event">
-            <Event selectedEvent={selectedEvent} cartFunctions={cartFunctions} />
+            <Event selectedEvent={selectedEvent} cartFunctions={cartFunctions} purchasedSeats={purchasedSeats} />
           </Route>
           <Route path="/eventlist">
             <EventList eventFunctions={eventFunctions} eventList={eventList} />

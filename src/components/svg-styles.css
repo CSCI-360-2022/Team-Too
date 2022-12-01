@@ -1,0 +1,23 @@
+.here {
+  fill: blue;
+}
+
+.cls-1 {
+  stroke: #500000;
+  cursor: pointer;
+}
+
+.here {
+  fill: #770000;
+}
+
+.selected {
+  fill: #a80000;
+}
+
+.purchased {
+  cursor: default;
+  pointer-events: none;
+  fill: #7B755A;
+  opacity: 0.5;
+}

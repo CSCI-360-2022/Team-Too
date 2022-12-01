@@ -7,7 +7,6 @@ import cofclogo from '../images/cofclogo.png'
 import './styles.css';
 
 function EventNavBar({itemNumber}) {
-  console.log(itemNumber)
 
   return (
     <Navbar expand="lg" className='navbar'>

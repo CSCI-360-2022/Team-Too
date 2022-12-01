@@ -3,15 +3,18 @@ import { Button, Col, Container, Row } from 'react-bootstrap'
 import seating from '../images/Seating2.PNG'
 import startSeat from '../images/startSeat.svg'
 import Ticket from './Ticket'
+import StadiumSVG from './StadiumSVG';
 import { seatData } from '../__mocks__/mockdata'
 import './styles.css'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { click } from '@testing-library/user-event/dist/click'
 
-function EventContainer({selectedEvent, cartFunctions}) {
+function EventContainer({selectedEvent, cartFunctions, purchasedSeats}) {
   const [seatList, setSeatList] = useState(seatData.seats)
+  const [selectedSeats, setSelectedSeats] = useState([])
   const { addToCart } = cartFunctions
-  const [pageCart, setPageCart] = useState([{}])
+  const [pageCart, setPageCart] = useState([])
+  const [total, setTotal] = useState(0)
 
   const addToCartPressed = (e) => {
     let selectedSeat = seatList.filter(seat => seat.rowID == e)
@@ -19,48 +22,47 @@ function EventContainer({selectedEvent, cartFunctions}) {
     addToCart(selectedSeat)
   }
 
-  const clickState = (e) => {
-    console.log(e)
+  const getPrice = (rowID) => {
+    var price = seatList.filter(seat => seat.rowName == rowID.substring(0,1).toUpperCase())
+    return price[0].price
+  }
+
+  const selectSeat = (e) => {
     var element = document.getElementById(e.target.id)
-   //var colorElement = element.style.backgroundColor
     element.classList.toggle("selected")
 
-    
+    if (element.classList.contains('selected')){
+      setSelectedSeats([...selectedSeats, e.target.id])
+      setTotal(total + getPrice(e.target.id))
+    } else {
+      let index = selectedSeats.indexOf(e.target.id)
+      setTotal(total - getPrice(e.target.id))
+      setSelectedSeats([
+        ...selectedSeats.slice(0, index),
+        ...selectedSeats.slice(index + 1, selectedSeats.length)
+      ])
+    }
   }
   
   return (
-    <Container>
+    <Container className={'event-container'}>
       <Row>
         <Container>
           {selectedEvent?.eventName}
         </Container>
       </Row>
       <Row>
-      <Col>
-      <svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 225.58 223.5">
-        <defs>
-        </defs>
-        <rect class="cls-1" id="seat1" x=".5" y=".5" width="103.97" height="103.97"  onClick={(e) => clickState(e)}/>
-        <rect class="cls-1" id="seat2"x="121.11" y=".5" width="103.97" height="103.97" onClick={(e) => clickState(e)}/>
-        <rect class="cls-1" id="seat3" x=".5" y="119.03" width="103.97" height="103.97" onClick={(e) => clickState(e)}/>
-        <rect class="cls-1" id="seat4" x="121.11" y="119.03" width="103.97" height="103.97" onClick={(e) => clickState(e)}/>
-      </svg>
-          {
-            seatList.map((seat) => {
-              return (
-                <Button value={seat.rowID} onClick={(e) => addToCartPressed(e.target.value)}>{seat.price}</Button>
-              )
-            })
-          }
+        <Col>
+          <StadiumSVG purchasedSeats={purchasedSeats} selectSeat={selectSeat} />
         </Col>
         <Col className='ticket-col'>
           {
-            pageCart.map((item) => {
-              console.log(item.price)
-              return ( <Ticket />);
+            selectedSeats.map((item) => {
+              var getPrice = seatList.filter(seat => seat.rowName == item.substring(0,1).toUpperCase())
+              return ( <Ticket seatID={item} seatPrice={getPrice[0].price} key={item}/>);
             })
           }
-          <Button >Check Out</Button>
+          <Button >${total} Check Out</Button>
         </Col>
       </Row>
     </Container>

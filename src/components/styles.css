@@ -85,6 +85,14 @@ span.bg-info {
   fill:white;
 }
 
-.selected{
-  fill:red;
+.category-div{
+  max-width: 200px;
+}
+
+.badge{
+  margin: 1px;
+}
+
+.event-container{
+  margin-top: 3rem;
 }

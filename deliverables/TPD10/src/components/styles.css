@@ -1,0 +1,98 @@
+.ticket-container {
+  box-shadow: 2px 4px 4px 4px rgb(0 0 0 / 0.1);
+  justify-content: center;
+  width: auto;
+  margin: 2em;
+}
+
+.info-col {
+  margin: 10px;
+  display: inline;
+}
+
+.info-row {
+  width: fit-content;
+  justify-content: center;
+}
+
+.info-result {
+  font-weight: bold;
+}
+
+.info-price {
+  justify-content: space-between
+}
+
+.cart-container {
+
+}
+
+.cart {
+  margin-top: 10%;
+}
+
+.cart-footer {
+  justify-content: center;
+  align-content: center;
+  height: 8em;
+  text-align: center;
+}
+
+.event-list-container {
+  height: 35em;
+  overflow-y: scroll;
+}
+
+.navbar {
+  background-color: #660000;
+}
+
+a.nav-link {
+  color: white;
+}
+
+button.btn.btn-primary {
+  background-color: #7B755A;
+  border: none;
+}
+
+.body {
+  background-color: #F8F8F5;
+}
+
+div.carousel-caption {
+  color: #F8F8F5;
+  background: #660000;
+}
+
+img.d-block.w-100 {
+  height: auto;
+  width: auto;
+}
+
+span.bg-info {
+  background-color: #A00000 !important;
+}
+
+.badge-btn {
+  padding: 0px !important;
+  background-color: #FFFFFF !important;
+}
+
+.cls-1{
+  stroke:#000;
+  stroke-miterlimit:10;
+  fill:white;
+}
+
+.category-div{
+  max-width: 200px;
+}
+
+.badge{
+  margin: 1px;
+}
+
+.event-container{
+  margin-top: 3rem;
+}

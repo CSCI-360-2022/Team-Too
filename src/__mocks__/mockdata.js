@@ -70,5 +70,10 @@ export const purchasedSeatData = {
     {seatID: 'b4', eventID: 2},
     {seatID: 'b5', eventID: 2},
     {seatID: 'b6', eventID: 2},
+    {seatID: 'c11', eventID: 1},
+    {seatID: 'c12', eventID: 1},
+    {seatID: 'c13', eventID: 1},
+    {seatID: 'c14', eventID: 1},
+    {seatID: 'c15', eventID: 1},
   ]
 }

@@ -19,6 +19,13 @@
       "permissions": {
         "setting": "open"
       }
+    },
+    "/addEvent": {
+      "name": "/addEvent",
+      "lambdaFunction": "addCofcEvent",
+      "permissions": {
+        "setting": "open"
+      }
     }
   }
 }

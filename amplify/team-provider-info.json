@@ -27,7 +27,15 @@
         },
         "addEvent": {
           "deploymentBucketName": "amplify-teamtoo-dev-182303-deployment",
-          "s3Key": "amplify-builds/addEvent-4b55577a766b53754178-build.zip"
+          "s3Key": "amplify-builds/addEvent-4c31616c73714d444438-build.zip"
+        },
+        "addCofcEvent": {
+          "deploymentBucketName": "amplify-teamtoo-dev-182303-deployment",
+          "s3Key": "amplify-builds/addCofcEvent-665339616d5236637542-build.zip"
+        },
+        "addNewEvent": {
+          "deploymentBucketName": "amplify-teamtoo-dev-182303-deployment",
+          "s3Key": "amplify-builds/addNewEvent-6f6f376662544746645a-build.zip"
         }
       }
     }

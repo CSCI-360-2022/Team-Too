@@ -69,6 +69,7 @@ function EventListContainer(props) {
 
   const eventPage = (e) => {
     selectEvent(e)
+    console.log(history.push)
     history.push('/event')
   }
 

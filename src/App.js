@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import {
   BrowserRouter as Router,
   Switch,
@@ -8,20 +8,22 @@ import {
 import User from "./components/User";
 import Main from "./pages/Main";
 import Event from "./pages/Event";
-
-import { withAuthenticator } from "@aws-amplify/ui-react";
 import EventList from "./pages/EventList";
 import Cart from "./pages/Cart";
 import EventNavBar from "./components/EventNavBar";
+import Admin from "./pages/Admin";
 import { eventData, purchasedSeatData } from './__mocks__/mockdata' 
-import Footer from "./components/Footer";
+// import { API, Auth, graphqlOperation } from "aws-amplify";
+// import { listCofcEvents } from './graphql/queries'
 
-export default function App() {
-  const [selectedEvent, setSelectedEvent] = useState()
+function App() {
+  const [selectedEvent, setSelectedEvent] = useState(19)
   const [purchasedSeats, setPurchasedSeats] = useState()
   const [eventList, setEventList] = useState(eventData.events)
   const [cartList, setCartList] = useState([{}])
   const [itemNumber, setItemNumber] = useState(0)
+  const [todos, setTodos] = useState([])
+  const [nextEventID, setNextEventID] = useState()
 
   const eventFunctions = {
     selectEvent: (cofcEvent) => {
@@ -41,12 +43,28 @@ export default function App() {
     }
   }
 
+  // const getEvents = async () => {
+  //   const eventData = await API.graphql(graphqlOperation(listCofcEvents))
+  //   setTodos(eventData.data.listCofcEvents.items)
+  //   let highestEventID = Math.max(...eventData.data.listCofcEvents.items.map(o => o.eventID))
+  //   setNextEventID(highestEventID + 1)
+  // }
+
+  const changeNextEventID = () => {
+    setNextEventID(nextEventID)
+  }
+
+  // useEffect(() => {
+  //   getEvents()
+  // }, [])
+
   return (
     <Router>
       <EventNavBar itemNumber={itemNumber} />
+      {todos.map((todo, i) => {
+        <h3>{todo.name}</h3>
+      })}
       <div>
-        {/* A <Switch> looks through its children <Route>s and
-            renders the first one that matches the current URL. */}
         <Switch>
           <Route path="/user">
             <User />
@@ -60,7 +78,10 @@ export default function App() {
           <Route path="/cart">
             <Cart cartFunctions={cartFunctions} />
           </Route>
-          <Route path="/">
+          <Route path="/admin">
+            <Admin nextEventID = {nextEventID} changeNextEventID = {changeNextEventID} />
+          </Route>
+          <Route path="/" eventFunctions={eventFunctions}>
             <Main />
           </Route>
         </Switch>
@@ -69,10 +90,4 @@ export default function App() {
   );
 }
 
-function Home() {
-  return <h2>Home</h2>;
-}
-
-function About() {
-  return <h2>About</h2>;
-}
+export default App

@@ -4,7 +4,7 @@ import secondSlide from '../images/slide2.jpg';
 import thirdSlide from '../images/slide3.jpg';
 import './styles.css';
 
-function DarkVariantExample() {
+function DarkVariantExample(eventfunctions) {
   return (
     <Carousel className="carousel-container">
       <Carousel.Item>

@@ -22,6 +22,10 @@ export default function App() {
   const [eventList, setEventList] = useState(eventData.events)
   const [cartList, setCartList] = useState([{}])
   const [itemNumber, setItemNumber] = useState(0)
+  const [passCart, setPassCart] = useState()
+
+  //passCart test
+  setPassCart('test')
 
   const eventFunctions = {
     selectEvent: (cofcEvent) => {
@@ -58,7 +62,7 @@ export default function App() {
             <EventList eventFunctions={eventFunctions} eventList={eventList} />
           </Route>
           <Route path="/cart">
-            <Cart cartFunctions={cartFunctions} />
+            <Cart cartFunctions={[cartFunctions,passCart]}/>
           </Route>
           <Route path="/">
             <Main />

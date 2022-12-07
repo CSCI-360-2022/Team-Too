@@ -5,8 +5,14 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import cofclogo from '../images/cofclogo.png'
 import './styles.css';
+import {useHistory} from 'react-router';
 
 function EventNavBar({itemNumber}) {
+  const history = useHistory();
+  const navEventList = () => {
+    console.log('stinkyPoopyButthole')
+    history.push=('/eventlist')
+  }
 
   return (
     <Navbar expand="lg" className='navbar'>
@@ -21,8 +27,8 @@ function EventNavBar({itemNumber}) {
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="me-auto">
-          <Nav.Link href="/eventlist" className='navbar-links'>EventList</Nav.Link>
-          <Nav.Link href="/event">Event</Nav.Link>
+          <Nav.Link to='/eventlist' className='navbar-links'>EventList</Nav.Link>
+          <Nav.Link to="/event">Event</Nav.Link>
           <Nav.Link href="/cart">Cart</Nav.Link>
           <>{itemNumber}</>
         </Nav>

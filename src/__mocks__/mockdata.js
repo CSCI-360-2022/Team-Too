@@ -77,3 +77,16 @@ export const purchasedSeatData = {
     {seatID: 'c15', eventID: 1},
   ]
 }
+
+export const cartItemData = {
+  cartItems: [
+    {seatId:'a1', Price:9.99, eventID: 1},
+    {seatId:'a2', Price:5.99, eventID: 2},
+    {seatId:'a3', Price:5.99, eventID: 3},
+    {seatId:'a4', Price:5.99, eventID: 4},
+    {seatId:'a5', Price:5.99, eventID: 5},
+    {seatId:'a6', Price:5.99, eventID: 1},
+    {seatId:'a7', Price:5.99, eventID: 1},
+  ]
+
+}

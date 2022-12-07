@@ -8,18 +8,43 @@ import { seatData } from '../__mocks__/mockdata'
 import './styles.css'
 import { useState, useEffect } from 'react'
 import { click } from '@testing-library/user-event/dist/click'
+import { useHistory } from 'react-router'
 
-function EventContainer({selectedEvent, cartFunctions, purchasedSeats}) {
+
+
+function EventContainer({selectedEvent, cartFunctions, purchasedSeats, passCartSeats}) {
   const [seatList, setSeatList] = useState(seatData.seats)
   const [selectedSeats, setSelectedSeats] = useState([])
   const { addToCart } = cartFunctions
   const [pageCart, setPageCart] = useState([])
   const [total, setTotal] = useState(0)
+  const history = useHistory()
+  
+  // const cartPage = (e) => {
+    
+  //   console.log(history.push)
+  //   history.push('/cart')
+  // }
+
+  
 
   const addToCartPressed = (e) => {
-    let selectedSeat = seatList.filter(seat => seat.rowID == e)
-    setPageCart([...pageCart, e])
-    addToCart(selectedSeat)
+    //passCartSeats()
+    let mySeats = []
+    selectedSeats.map((seat) => {
+      mySeats.push({
+        seatId: seat,
+        price: getPrice(seat),
+        eventId: selectedEvent.eventID
+      })
+    })
+    passCartSeats(mySeats)
+    console.log(mySeats)
+    history.push('/cart')
+    // let selectedSeat = seatList.filter(seat => seat.rowID == e)
+    // console.log(seatList)
+    // setPageCart([...pageCart, e])
+    // addToCart(selectedSeat)
   }
 
   const getPrice = (rowID) => {
@@ -62,7 +87,8 @@ function EventContainer({selectedEvent, cartFunctions, purchasedSeats}) {
               return ( <Ticket seatID={item} seatPrice={getPrice[0].price} key={item}/>);
             })
           }
-          <Button >${total} Check Out</Button>
+          {/*Sending tickets to cart*/}
+          <Button onClick={() => addToCartPressed(selectedSeats)}>Add to Cart</Button>
         </Col>
       </Row>
     </Container>

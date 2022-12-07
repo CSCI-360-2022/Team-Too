@@ -96,3 +96,8 @@ span.bg-info {
 .event-container{
   margin-top: 3rem;
 }
+
+.filter-form{
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}

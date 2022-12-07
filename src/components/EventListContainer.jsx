@@ -87,7 +87,7 @@ function EventListContainer(props) {
 
   return (
     <Container>
-      <Form>
+      <Form className="filter-form">
         <Row>
           <Col>
             <Form.Control placeholder="Event Name" onChange={(e) => filterList(e.target.value)}/>
@@ -100,8 +100,13 @@ function EventListContainer(props) {
           </Col>
         </Row>
         <Row>
-          <DatePicker selected={startDate} onChange={(date) => startDatePicked(date)} />
-          <DatePicker selected={endDate} onChange={(date) => endDatePicked(date)} />
+          <Col>
+            <Row>
+            <DatePicker selected={startDate} onChange={(date) => startDatePicked(date)} />
+            </Row>
+            <DatePicker selected={startDate} onChange={(date) => startDatePicked(date)} />
+            <DatePicker selected={endDate} onChange={(date) => endDatePicked(date)} />
+          </Col>
         </Row>
       </Form>
       <Container className="event-list-container">

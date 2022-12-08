@@ -8,7 +8,7 @@ import './styles.css'
 import "react-datepicker/dist/react-datepicker.css";
 import ApiCalendar from 'react-google-calendar-api';
 
-function EventListContainer(props) {
+function EventListContainer({eventFunctions}) {
   const [eventList, setEventList] = useState(eventData.events)
   const [filteredList, setFilteredList] = useState(eventData.events)
   const [filterBadges, setFilterBadges] = useState([])
@@ -26,7 +26,7 @@ function EventListContainer(props) {
   }
   const apiCalendar = new ApiCalendar(config)
 
-  const { selectEvent } = props.eventFunctions
+  const { selectEvent } = eventFunctions
 
   const filterList = (filterValue) => {
     setFilteredList(eventList.filter(event => event.eventName.includes(filterValue)))

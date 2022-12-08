@@ -3,11 +3,11 @@ import MainCarousel from '../components/MainCarousel'
 import Container from 'react-bootstrap/Container'
 
 
-function Main() {
+function Main({eventFunctions}) {
 
   return (
     <Container>
-      <MainCarousel />
+      <MainCarousel eventFunctions={eventFunctions}/>
     </Container>
   )
 }

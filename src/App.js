@@ -34,6 +34,7 @@ function App() {
 
   const eventFunctions = {
     selectEvent: (cofcEvent) => {
+      console.log(cofcEvent);
       const found = eventList.find(obj => {
         return obj.eventID == cofcEvent;
       });
@@ -89,7 +90,7 @@ function App() {
             <Admin nextEventID = {nextEventID} changeNextEventID = {changeNextEventID} />
           </Route>
           <Route path="/" eventFunctions={eventFunctions}>
-            <Main />
+            <Main eventFunctions={eventFunctions} />          
           </Route>
         </Switch>
       </div>

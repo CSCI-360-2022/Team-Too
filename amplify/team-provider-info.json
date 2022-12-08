@@ -37,6 +37,9 @@
           "deploymentBucketName": "amplify-teamtoo-dev-182303-deployment",
           "s3Key": "amplify-builds/addNewEvent-6f6f376662544746645a-build.zip"
         }
+      },
+      "storage": {
+        "cofcEvent": {}
       }
     }
   }

@@ -6,17 +6,17 @@ import reportWebVitals from './reportWebVitals';
 import '@aws-amplify/ui-react/styles.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-// import Amplify from 'aws-amplify';
-// import config from './aws-exports';
-// import { AmplifyProvider } from '@aws-amplify/ui-react';
+import Amplify from 'aws-amplify';
+import config from './aws-exports';
+import { AmplifyProvider } from '@aws-amplify/ui-react';
 
-// Amplify.configure(config)
+Amplify.configure(config)
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  // <AmplifyProvider>
+  <AmplifyProvider>
     <App />
-  // </AmplifyProvider>
+  </AmplifyProvider>
 );
 
 // If you want to start measuring performance in your app, pass a function

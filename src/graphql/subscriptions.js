@@ -82,3 +82,42 @@ export const onDeleteCofcEvent = /* GraphQL */ `
     }
   }
 `;
+export const onCreatePurchasedSeat = /* GraphQL */ `
+  subscription OnCreatePurchasedSeat(
+    $filter: ModelSubscriptionPurchasedSeatFilterInput
+  ) {
+    onCreatePurchasedSeat(filter: $filter) {
+      seatID
+      eventID
+      id
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onUpdatePurchasedSeat = /* GraphQL */ `
+  subscription OnUpdatePurchasedSeat(
+    $filter: ModelSubscriptionPurchasedSeatFilterInput
+  ) {
+    onUpdatePurchasedSeat(filter: $filter) {
+      seatID
+      eventID
+      id
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onDeletePurchasedSeat = /* GraphQL */ `
+  subscription OnDeletePurchasedSeat(
+    $filter: ModelSubscriptionPurchasedSeatFilterInput
+  ) {
+    onDeletePurchasedSeat(filter: $filter) {
+      seatID
+      eventID
+      id
+      createdAt
+      updatedAt
+    }
+  }
+`;

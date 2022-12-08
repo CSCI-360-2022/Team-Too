@@ -2,10 +2,10 @@ import React from 'react'
 import CartContainer from '../components/CartContainer'
 import '../components/styles.css'
 
-function Cart({itemNumber, passCart}) {
+function Cart({passCart}) {
   return (
     <div className='cart'>
-      <CartContainer itemNumber={itemNumber} passCart={passCart}/>
+      <CartContainer passCart={passCart}/>
     </div>
   )
 }

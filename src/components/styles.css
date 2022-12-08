@@ -101,3 +101,19 @@ span.bg-info {
   padding-top: 1rem;
   padding-bottom: 1rem;
 }
+
+.ticket-col{
+  padding-left: 20px;
+  box-shadow: 2px 4px 4px 4px rgb(0 0 0 / 0.1);
+  overflow-y: auto;
+  max-height: 400px;
+}
+
+.add-to-cart-btn{
+  float: right;
+  margin-top: 20px;
+}
+
+.filter-form-row{
+  margin-bottom: 10px;
+}

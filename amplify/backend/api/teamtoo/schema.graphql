@@ -10,7 +10,7 @@ type Todo @model {
 }
 
 type CofcEvent @model {
-  eventID: ID!
+  eventID: ID! @index(name: "CofcEventsByEventDate", queryField: "cofcEventsByEventDate", sortKeyFields: ["EventDate"])
   eventName: String!
   eventDate: AWSDateTime
   eventCategory: [String]

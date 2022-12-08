@@ -1,14 +1,16 @@
 import Carousel from 'react-bootstrap/Carousel';
+import { useNavigate } from 'react-router';
 import firstSlide from '../images/slide1.jpg';
 import secondSlide from '../images/slide2.jpg';
 import thirdSlide from '../images/slide3.jpg';
 import './styles.css';
 
-function DarkVariantExample(eventfunctions) {
+function MainCarousel({imageClick}) {
+
   return (
     <Carousel className="carousel-container">
       <Carousel.Item>
-        <a href="/event">
+        <a onClick={() => imageClick(1)}>
           <img
             className="d-block w-100"
             src={firstSlide}
@@ -21,22 +23,26 @@ function DarkVariantExample(eventfunctions) {
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
-        <img
-          className="d-block w-100"
-          src={secondSlide}
-          alt="Second slide"
-        />
+        <a onClick={() => imageClick(2)}>
+          <img
+            className="d-block w-100"
+            src={secondSlide}
+            alt="Second slide"
+          />
+        </a>
         <Carousel.Caption>
           <h5>Second slide label</h5>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
-        <img
-          className="d-block w-100"
-          src={thirdSlide}
-          alt="Third slide"
-        />
+        <a onClick={() => imageClick(3)}>
+          <img
+            className="d-block w-100"
+            src={thirdSlide}
+            alt="Third slide"
+          />
+        </a>
         <Carousel.Caption>
           <h5>Third slide label</h5>
           <p>
@@ -48,4 +54,4 @@ function DarkVariantExample(eventfunctions) {
   );
 }
 
-export default DarkVariantExample;
+export default MainCarousel;

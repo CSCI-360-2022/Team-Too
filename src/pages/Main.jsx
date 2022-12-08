@@ -1,13 +1,21 @@
-import React, { useState } from 'react'
+import React from 'react'
+import { useNavigate } from 'react-router';
 import MainCarousel from '../components/MainCarousel'
 import Container from 'react-bootstrap/Container'
 
 
-function Main() {
+function Main({eventFunctions}) {
+  const {selectEvent} = eventFunctions
+  const navigate = useNavigate()
+
+  const imageClick = (x) => {
+    selectEvent(x)
+    navigate('/event')
+  }
 
   return (
     <Container>
-      <MainCarousel />
+      <MainCarousel imageClick={imageClick}/>
     </Container>
   )
 }

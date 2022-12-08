@@ -8,30 +8,20 @@ import { seatData } from '../__mocks__/mockdata'
 import './styles.css'
 import { useState, useEffect } from 'react'
 import { click } from '@testing-library/user-event/dist/click'
-import { useHistory } from 'react-router'
 
-
-
-function EventContainer({selectedEvent, cartFunctions, purchasedSeats, passCartSeats}) {
+function EventContainer({selectedEvent, cartFunctions, purchasedSeats, passCartSeats, passCart, navCart}) {
   const [seatList, setSeatList] = useState(seatData.seats)
   const [selectedSeats, setSelectedSeats] = useState([])
   const { addToCart } = cartFunctions
   const [pageCart, setPageCart] = useState([])
   const [total, setTotal] = useState(0)
-  const history = useHistory()
-  
-  // const cartPage = (e) => {
-    
-  //   console.log(history.push)
-  //   history.push('/cart')
-  // }
 
-  
 
   const addToCartPressed = (e) => {
-    //passCartSeats()
     let mySeats = []
     selectedSeats.map((seat) => {
+      console.log(passCart)
+      !passCart.some(selectedSeat => selectedSeat.seatId === seat) &&
       mySeats.push({
         seatId: seat,
         price: getPrice(seat),
@@ -39,12 +29,7 @@ function EventContainer({selectedEvent, cartFunctions, purchasedSeats, passCartS
       })
     })
     passCartSeats(mySeats)
-    console.log(mySeats)
-    history.push('/cart')
-    // let selectedSeat = seatList.filter(seat => seat.rowID == e)
-    // console.log(seatList)
-    // setPageCart([...pageCart, e])
-    // addToCart(selectedSeat)
+    navCart()
   }
 
   const getPrice = (rowID) => {
@@ -68,6 +53,14 @@ function EventContainer({selectedEvent, cartFunctions, purchasedSeats, passCartS
       ])
     }
   }
+
+  useEffect(() => {
+    let prevSelectedSeats = []
+    passCart.map((seat) => {
+      seat.eventId === selectedEvent.eventID && prevSelectedSeats.push(seat.seatId)
+    })
+    setSelectedSeats(prevSelectedSeats)
+  },[])
   
   return (
     <Container className={'event-container'}>
@@ -78,7 +71,7 @@ function EventContainer({selectedEvent, cartFunctions, purchasedSeats, passCartS
       </Row>
       <Row>
         <Col>
-          <StadiumSVG purchasedSeats={purchasedSeats} selectSeat={selectSeat} />
+          <StadiumSVG purchasedSeats={purchasedSeats} selectSeat={selectSeat} passCart={passCart} selectedEvent={selectedEvent} />
         </Col>
         <Col className='ticket-col'>
           {
@@ -88,9 +81,10 @@ function EventContainer({selectedEvent, cartFunctions, purchasedSeats, passCartS
             })
           }
           {/*Sending tickets to cart*/}
-          <Button onClick={() => addToCartPressed(selectedSeats)}>Add to Cart</Button>
         </Col>
+        
       </Row>
+      <Button className="add-to-cart-btn" onClick={() => addToCartPressed(selectedSeats)}>Add to Cart</Button>
     </Container>
   )
 }

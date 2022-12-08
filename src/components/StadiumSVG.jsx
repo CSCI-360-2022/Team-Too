@@ -2,13 +2,17 @@ import React from 'react'
 import { useEffect } from 'react'
 import './svg-styles.css'
 
-function StadiumSVG({ selectSeat, purchasedSeats }) {
+function StadiumSVG({ selectSeat, purchasedSeats, passCart, selectedEvent }) {
 
   useEffect(() => {
     purchasedSeats?.map(seat => {
       var element = document.getElementById(seat.seatID)
       element.classList.toggle("purchased")
       element.onclick=null
+    })
+    passCart?.map(seat => {
+      var element = document.getElementById(seat.seatId)
+      selectedEvent.eventID == seat.eventId && element.classList.toggle("selected")
     })
   }, [])
   
@@ -110,7 +114,7 @@ function StadiumSVG({ selectSeat, purchasedSeats }) {
           <circle className="cls-1" id="e15" cx="439.22" cy="343.12" r="5.83" onClick={(e) => selectSeat(e)}/>
           <circle className="cls-1" id="f15" cx="439.22" cy="359.81" r="5.83" onClick={(e) => selectSeat(e)}/>
           <circle className="cls-1" id="f44" cx="159.22" cy="6.33" r="5.83" onClick={(e) => selectSeat(e)}/>
-          <circle className="cls-1" id="e43" cx="159.22" cy="23.03" r="5.83" onClick={(e) => selectSeat(e)}/>
+          <circle className="cls-1" id="e44" cx="159.22" cy="23.03" r="5.83" onClick={(e) => selectSeat(e)}/>
           <circle className="cls-1" id="d44" cx="159.22" cy="39.72" r="5.83" onClick={(e) => selectSeat(e)}/>
           <circle className="cls-1" id="c44" cx="159.22" cy="56.42" r="5.83" onClick={(e) => selectSeat(e)}/>
           <circle className="cls-1" id="b44" cx="159.22" cy="73.12" r="5.83" onClick={(e) => selectSeat(e)}/>
@@ -238,7 +242,7 @@ function StadiumSVG({ selectSeat, purchasedSeats }) {
           <circle className="cls-1" id="a25" cx="480.81" cy="138.81" r="5.83" onClick={(e) => selectSeat(e)}/>
           <circle className="cls-1" id="a24" cx="480.81" cy="155.51" r="5.83" onClick={(e) => selectSeat(e)}/>
           <circle className="cls-1" id="a23" cx="480.81" cy="172.21" r="5.83" onClick={(e) => selectSeat(e)}/>
-          <circle className="cls-1" id="a23" cx="480.81" cy="188.9" r="5.83" onClick={(e) => selectSeat(e)}/>
+          <circle className="cls-1" id="a22" cx="480.81" cy="188.9" r="5.83" onClick={(e) => selectSeat(e)}/>
           <circle className="cls-1" id="a21" cx="480.81" cy="205.6" r="5.83" onClick={(e) => selectSeat(e)}/>
           <circle className="cls-1" id="a20" cx="480.81" cy="222.29" r="5.83" onClick={(e) => selectSeat(e)}/>
           <circle className="cls-1" id="b25" cx="500.81" cy="138.81" r="5.83" onClick={(e) => selectSeat(e)}/>

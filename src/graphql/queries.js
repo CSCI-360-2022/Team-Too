@@ -65,3 +65,32 @@ export const listCofcEvents = /* GraphQL */ `
     }
   }
 `;
+export const getPurchasedSeat = /* GraphQL */ `
+  query GetPurchasedSeat($id: ID!) {
+    getPurchasedSeat(id: $id) {
+      seatID
+      eventID
+      id
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const listPurchasedSeats = /* GraphQL */ `
+  query ListPurchasedSeats(
+    $filter: ModelPurchasedSeatFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listPurchasedSeats(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        seatID
+        eventID
+        id
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;

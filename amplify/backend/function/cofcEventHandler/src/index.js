@@ -1,5 +1,4 @@
 exports.handler = async (e) => {
-    console.log(e)
     const cofcEventID = e.pathParameters.eventID;
     const cofcEvent = {'eventID': cofcEventID, 'cofcEventName': "CofC Event " + cofcEventID };
     const response = {

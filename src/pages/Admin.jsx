@@ -2,10 +2,10 @@ import React from 'react'
 import Container from 'react-bootstrap/Container'
 import AdminContainer from '../components/AdminContainer'
 
-function Admin({nextEventID, changeNextEventID}) {
+function Admin() {
   return (
     <Container>
-      <AdminContainer nextEventID={nextEventID} changeNextEventID={changeNextEventID} />
+      <AdminContainer />
     </Container>
   )
 }

@@ -1,15 +1,23 @@
 import React from 'react'
 import EventListContainer from '../components/EventListContainer'
+import { useNavigate } from 'react-router'
 import Amplify, { API } from 'aws-amplify'
 import '../components/styles.css'
 
-const myAPI = "apic5c75167"
-const path = '/customers';
 
-function EventList(props) {
+
+function EventList({eventList, eventFunctions}) {
+  const navigate = useNavigate()
+  const {selectEvent} = eventFunctions
+
+  const eventPage = (e) => {
+    selectEvent(e)
+    navigate('/event')
+  }
+
   return (
     <div className="event-list">
-      <EventListContainer eventFunctions={props.eventFunctions} />
+      <EventListContainer eventList={eventList} eventFunctions={eventFunctions} eventPage={eventPage} />
     </div>
   )
 }

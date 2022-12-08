@@ -94,3 +94,45 @@ export const deleteCofcEvent = /* GraphQL */ `
     }
   }
 `;
+export const createPurchasedSeat = /* GraphQL */ `
+  mutation CreatePurchasedSeat(
+    $input: CreatePurchasedSeatInput!
+    $condition: ModelPurchasedSeatConditionInput
+  ) {
+    createPurchasedSeat(input: $input, condition: $condition) {
+      seatID
+      eventID
+      id
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const updatePurchasedSeat = /* GraphQL */ `
+  mutation UpdatePurchasedSeat(
+    $input: UpdatePurchasedSeatInput!
+    $condition: ModelPurchasedSeatConditionInput
+  ) {
+    updatePurchasedSeat(input: $input, condition: $condition) {
+      seatID
+      eventID
+      id
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const deletePurchasedSeat = /* GraphQL */ `
+  mutation DeletePurchasedSeat(
+    $input: DeletePurchasedSeatInput!
+    $condition: ModelPurchasedSeatConditionInput
+  ) {
+    deletePurchasedSeat(input: $input, condition: $condition) {
+      seatID
+      eventID
+      id
+      createdAt
+      updatedAt
+    }
+  }
+`;

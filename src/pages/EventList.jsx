@@ -4,8 +4,6 @@ import { useNavigate } from 'react-router'
 import Amplify, { API } from 'aws-amplify'
 import '../components/styles.css'
 
-
-
 function EventList({eventList, eventFunctions}) {
   const navigate = useNavigate()
   const {selectEvent} = eventFunctions

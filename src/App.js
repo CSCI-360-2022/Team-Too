@@ -33,6 +33,7 @@ function App() {
 
   const eventFunctions = {
     selectEvent: (cofcEvent) => {
+      console.log(cofcEvent);
       const found = eventList.find(obj => {
         return obj.eventID == cofcEvent;
       })
